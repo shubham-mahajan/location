@@ -123,10 +123,11 @@ def available_cabs():
             longitude = float(data['longitude'])
             drivers = Driver.query.all()
             for driver in drivers:
-                distance = haversine((latitude, longitude),
-                        (driver.latitude, driver.longitude), unit='km')
-                if distance <= 4:
-                    available_cabs_data.append(driver.serialize())
+                if driver.latitude and driver.longitude:
+                    distance = haversine((latitude, longitude),
+                            (driver.latitude, driver.longitude), unit='km')
+                    if distance <= 4:
+                        available_cabs_data.append(driver.serialize())
 
             if len(available_cabs_data) > 0:
                 return (jsonify({'available_cabs': list(available_cabs_data)}),
