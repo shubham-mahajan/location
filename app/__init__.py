@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 

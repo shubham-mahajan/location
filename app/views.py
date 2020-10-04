@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from app import app, db
 from sqlalchemy import exc
+from app import app, db
 from haversine import haversine
 
 from flask import request, jsonify
@@ -116,7 +116,8 @@ def available_cabs():
         for driver in drivers:
             if driver.latitude and driver.longitude:
                 distance = haversine((latitude, longitude),
-                        (driver.latitude, driver.longitude), unit='km')
+                                     (driver.latitude, driver.longitude),
+                                     unit='km')
                 if distance <= 4:
                     available_cabs_data.append(driver.serialize())
 
