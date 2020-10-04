@@ -18,16 +18,8 @@ class Driver(db.Model):
     latitude = db.Column(db.Float())
     longitude = db.Column(db.Float())
 
-    def __init__(
-        self,
-        name,
-        email,
-        phone_number,
-        license_number,
-        car_number,
-        latitude=None,
-        longitude=None,
-        ):
+    def __init__(self, name, email, phone_number,
+                 license_number, car_number, latitude=None, longitude=None):
         self.name = name
         self.email = email
         self.phone_number = phone_number
