@@ -72,7 +72,7 @@ def register_driver():
 
 
 @app.route('/api/v1/driver/<id>/sendLocation/', methods=['POST'])
-def sendLocation(id):
+def send_location(id):
     '''Update the Driver Location
     :param id(required): the id of the driver taken from the route.
     :type name: string
